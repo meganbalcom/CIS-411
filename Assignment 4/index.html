@@ -35,13 +35,13 @@
         <section ng-controller="TabController as tab">
           <ul class="nav nav-pills">
             <li ng-class="{ active:tab.isSet(1) }">
-              <a href="" ng-click="tab.setTab(1)">Description</a>
+              <a href ng-click="tab.setTab(1)">Description</a>
             </li>
             <li ng-class="{ active:tab.isSet(2) }">
-              <a href="" ng-click="tab.setTab(2)">Specs</a>
+              <a href ng-click="tab.setTab(2)">Specs</a>
             </li>
             <li ng-class="{ active:tab.isSet(3) }">
-              <a href="" ng-click="tab.setTab(3)">Reviews</a>
+              <a href ng-click="tab.setTab(3)">Reviews</a>
             </li>
           </ul>
 
@@ -84,7 +84,7 @@
               <!--  Review Form -->
               <h4>Submit a Review</h4>
               <fieldset class="form-group">
-                <select ng-model="reviewCtrl.review.stars" required class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars">
+                <select ng-model="reviewCtrl.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars" required >
                   <option value="">Rate the Product</option>
                 </select>
               </fieldset>
@@ -92,7 +92,7 @@
                 <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Write a short review of the product..." title="Review"></textarea>
               </fieldset>
               <fieldset class="form-group">
-                <input ng-model="reviewCtrl.review.author" required type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" />
+                <input ng-model="reviewCtrl.review.author" type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" required />
               </fieldset>
               <fieldset class="form-group">
                 <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
