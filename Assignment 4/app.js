@@ -5,15 +5,16 @@
     this.products = gems;
   });
 
-app.controller('TabController', function(){
+  app.controller('TabController', function(){
 this.tab = 1;
 this.setTab = function(selectedTab){
 this.tab = selectedTab;
 };
 this.isSet = function(givenTab){
-return this.tab == givenTab;
+return this.tab ==givenTab;
 };
-});
+  });
+
   var gems = [
       {
         name: 'Azurite',
