@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html ng-app="gemStore">
   <head>
-    <link rel="stylesheet" type="text/css" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <script type="text/javascript" src="angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
   </head>
 
@@ -10,7 +10,7 @@
     <!--  Store Header  -->
     <header>
       <h1 class="text-center">Flatlander Crafted Gems</h1>
-      <h2 class="text-center">-- an Angular store --</h2>
+      <h2 class="text-center">– an Angular store –</h2>
     </header>
 
     <!--  Products Container  -->
@@ -46,15 +46,26 @@
           </ul>
 
           <!--  Description Tab's Content  -->
-          <div ng-show="tab.isSet(1)">
-            <h4>Description</h4>
-            <blockquote>{{product.description}}</blockquote>
+          <div ng-show="tab.isSet(1)" ng-include =" 'product-description.html' ">
           </div>
 
           <!--  Spec Tab's Content  -->
           <div ng-show="tab.isSet(2)">
             <h4>Specs</h4>
-            <blockquote>Shine: {{product.shine}}</blockquote>
+            <ul class="list-unstyled">
+              <li>
+                <strong>Shine</strong>
+                : {{product.shine}}</li>
+              <li>
+                <strong>Faces</strong>
+                : {{product.faces}}</li>
+              <li>
+                <strong>Rarity</strong>
+                : {{product.rarity}}</li>
+              <li>
+                <strong>Color</strong>
+                : {{product.color}}</li>
+            </ul>
           </div>
 
           <!--  Review Tab's Content  -->
@@ -66,9 +77,9 @@
                 <blockquote>
                   <strong>{{review.stars}} Stars</strong>
                   {{review.body}}
-                  <cite class="clearfix">—{{review.author}} on {{review.createdOn | date}}</cite>
+                  <cite class="clearfix">—{{review.author}}</cite>
                 </blockquote>
-              </li>
+              </li>  
             </ul>
 
             <!--  Review Form -->
